@@ -65,8 +65,18 @@ body {
     display: block;
 }
 
+.sidebar a:hover {
+    font-size: 22px
+}
+
 .sidebar a.active {
     font-weight: bold;
+    font-size: 22px;
+}
+
+.sidebar a.active:hover {
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .social-links {
@@ -126,6 +136,6 @@ body {
 .main-content a {
     color: white;
     font-weight: bold;
-    text-decoration-style: underline;
+    text-decoration: underline;
     font-family: "Georgia", serif;
 }
