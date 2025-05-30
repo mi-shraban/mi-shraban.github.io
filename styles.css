@@ -39,7 +39,8 @@ body {
     border-radius: 20px;
     object-fit: cover;
     margin-top: 10%;
-    margin-inline: auto;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .sidebar h1 {
