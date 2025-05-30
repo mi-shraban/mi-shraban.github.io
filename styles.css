@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #00435c;
+    background-color: #414654;
     color: white;
     display: flex;
     justify-content: center;
@@ -18,8 +18,8 @@ body {
 
 .container {
     display: flex;
-    width: 90%; /* Take full width */
-    height: 100%; /* Take full height */
+    width: 100%;
+    height: 100%;
 }
 
 .sidebar {
@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    text-align: center;
+    text-align: left;
     border-radius: 20px;
 }
 
@@ -44,16 +44,15 @@ body {
 }
 
 .sidebar h1 {
-    font-size: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 0px;
+    font-size: 25px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .sidebar ul {
     list-style-type: none;
     text-align: left;
-    margin-left: 20%;
+    margin-left: 5%;
 }
 
 .sidebar li {
@@ -91,6 +90,7 @@ body {
     background-color: #00435c;
     overflow-y: auto;
     height: 100%;
+    border-radius: 20px;
 }
 
 .main-content h2 {
