@@ -36,7 +36,7 @@ body {
 .profile-picture {
     width: 80%;
     height: width;
-    border-radius: 15%;
+    border-radius: 20px;
     object-fit: cover;
     margin-top: 10%;
     margin-inline: auto;
