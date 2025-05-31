@@ -34,7 +34,7 @@ body {
 
 .profile-picture {
     width: 80%;
-    height: width;
+    /*height: width;*/
     border-radius: 20px;
     object-fit: cover;
     margin-top: 10%;
@@ -43,15 +43,20 @@ body {
 }
 
 .sidebar h1 {
-    font-size: 25px;
-    margin-left: 2%;
-    margin-right: 2%;
+    font-size: 27px;
+    margin-inline: auto;
+}
+
+.sidebar p {
+    font-size: 17px;
+    font-weight: normal;
+    margin-inline: auto;
 }
 
 .sidebar ul {
     list-style-type: none;
     text-align: left;
-    margin-left: 5%;
+    margin-left: 7%;
 }
 
 .sidebar li {
