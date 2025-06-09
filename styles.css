@@ -45,6 +45,7 @@ body {
 .sidebar h1 {
     font-size: 27px;
     margin-inline: auto;
+    margin-left: 3%
 }
 
 .sidebar p {
