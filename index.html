@@ -4,77 +4,64 @@
     <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="google-site-verification" content="N_9afOGrajZsHzI_c-J8Go9KxEsODSh0k730Ecgq2kU" />
-
     <meta name="description" content="Md. Monowarul Islam Shraban's personal portfolio website showcasing projects, skills, and contact information.">
     <meta name="keywords" content="Md. Monowarul Islam Shraban, Portfolio, GitHub, Developer, Projects, Bangladesh, Computer Science">
     <meta name="author" content="Md. Monowarul Islam Shraban">
     <meta name="robots" content="index, follow">
-
     <meta property="og:title" content="Monowarul Islam Shraban">
     <meta property="og:description" content="Portfolio of Monowarul Islam Shraban.">
     <meta property="og:url" content="https://monowarulislamshraban.github.io">
     <meta property="og:type" content="website">
     <meta property="og:image" content="profile.jpg">
-
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="container1">
-        <div id="sidebar-placeholder">
-            <script>
-                fetch('sidebar.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('sidebar-placeholder').innerHTML = data;
-
-                        // Automatically set active nav button
-                        const currentPage = window.location.pathname.split('/').pop();
-                        const navLinks = document.querySelectorAll('.sidebar nav a');
-
-                        navLinks.forEach(link => {
-                            const href = link.getAttribute('href');
-                            if (href === currentPage || (href === 'index.html' && currentPage === '')) {
-                                link.classList.remove('button');
-                                link.classList.add('button_active');
-                            }
-                        });
-                    });
-            </script>
+        <div class="sidebar">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+            <h1>MD. MONOWARUL ISLAM<br><p>Computer Science Student</p></h1>
+            <nav>
+                <a class="button" onclick="loadContent('home.html')">Home</a><br>
+                <a class="button" onclick="loadContent('projects.html')">Projects</a><br>
+                <a class="button" onclick="loadContent('workexperience.html')">Work Experience</a><br>
+                <a class="button" onclick="loadContent('publications.html')">Publications</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/md-monowarul-islam-b7657b341/"  class="button" target="_blank"><img src="linkedin-white.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/monowarulIslamShraban"  class="button" target="_blank"><img src="github-white.svg" alt="Github"></a>
+                <a href="https://codeforces.com/profile/xordan.-"  class="button" target="_blank"><img src="codeforces-white.svg" alt="Codeforces"></a>
+            </div>
         </div>
     </div>
     <div class="container2">
         <div class="main-content">
-            <h2>About Me</h2>
-            <p>Hello there! This is Monowarul Islam, but you can also call me as Shraban. I am a final year Computer Science
-                student at <a href="https://bracu.ac.bd"><i>Brac University</i></a>, Dhaka. I have a passion for problem-solving and
-                have participated in various programming contests over the years. Also, I have gained experience working on a few projects which
-                required me to study Machine Learning (<i>Scikit-Learn, TensorFlow</i>), Robotics (<i>ESP32, Arduino Uno, C++</i>) and Web Development (<i>PHP, HTML, CSS</i>), so I possess knowledge on these topics as well.
-                Alongside that, I am currently working on my undergrad thesis which is a research project on Cyber-Security.
-                </br></br>As I said previously, I like to solve problems on various websites, mostly on codeforces. You can find
-                the problems I have solved in <a href="https://codeforces.com/submissions/xordan.-"><i>here</i></a>. I also love playing
-                video games on my free time. I mostly play online FPS and racing games nowadays. I love clicking on pixels and
-                pressing 'W' to win.</p>
-
-            <h3>Skills</h3>
-            <ul>
-                <li>Programming Languages: <b>Python, C, C++</b></li>
-                <li>Data Science & ML Libraries: <b>NumPy, Matplotlib, Pandas, Scikit-Learn, TensorFlow, OpenCV</b></li>
-                <li>Web Development: <b>HTML, CSS, PHP, Flask</b></li>
-                <li>Database: <b>MySQL, SQLite</b></li>
-                <li>Others: <b>LaTeX, Microsoft Office, Google Workspace</b></li>
-            </ul>
-
-            <h3>Contact Information:</h3>
-            <ul>
-                <li>Email: <b>monowarul7ii@gmail.com</b></li>
-                <li>Discord: <b>xordan77</b></li>
-                <li>Telegram: <b>@xordan7</b></li>
-            </ul>
+            <div id="content-placeholder">
+                <!-- Content will be loaded here -->
+            </div>
         </div>
     </div>
 
+    <script>
+        // Function to load content dynamically
+        async function loadContent(url) {
+            const response = await fetch(url);
+            const content = await response.text();
+            document.getElementById('content-placeholder').innerHTML = content;
+
+            // Set the active button
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                if (button.getAttribute('onclick').includes(url)) {
+                    button.classList.add('button_active');
+                } else {
+                    button.classList.remove('button_active');
+                }
+            });
+        }
+
+        // Load home content on page load
+        window.onload = () => loadContent('home.html');
+    </script>
 </body>
 </html>

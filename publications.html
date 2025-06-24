@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <div class="container1">
-        <div id="sidebar-placeholder">
-            <script>
-                fetch('sidebar.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('sidebar-placeholder').innerHTML = data;
-
-                        // Automatically set active nav button
-                        const currentPage = window.location.pathname.split('/').pop();
-                        const navLinks = document.querySelectorAll('.sidebar nav a');
-
-                        navLinks.forEach(link => {
-                            const href = link.getAttribute('href');
-                            if (href === currentPage || (href === 'index.html' && currentPage === '')) {
-                                link.classList.remove('button');
-                                link.classList.add('button_active');
-                            }
-                        });
-                    });
-            </script>
-        </div>
-    </div>
-    <div class="container2">
-        <div class="main-content">
-            <h2>Research Papers</h2>
-            <h1>NOTHING TO SEE HERE. YET! :(</h1>
-        </div>
-    </div>
-</body>
-</html>
+<div class="publications">
+    <h2>Research Papers</h2>
+    <h1>NOTHING TO SEE HERE. YET! :(</h1>
+</div>
