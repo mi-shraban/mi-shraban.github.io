@@ -43,7 +43,8 @@ body {
 
 .sidebar h1 {
     font-size: 27px;
-    margin-left: 3%
+    margin-left: 3%;
+    color: #ffefb8;
 }
 
 .sidebar p {
@@ -57,12 +58,16 @@ body {
     align-items: center;
 }
 
+.sidebar a.button:hover {
+    color: black;
+}
+
 .sidebar a.button_active {
     color: black;
 }
 
 .sidebar a.button_active:hover {
-    color: white;
+    color: black;
 }
 
 .button, .button_active {
@@ -79,16 +84,15 @@ body {
 }
 
 .button:hover {
-    background-color: #576573;
+    background-color: #fbeb9c;
 }
 
 .button_active {
-    background-color: white;
-    color: white;
+    background-color: #ffefb8;
 }
 
 .button_active:hover {
-    background-color: #576573;
+    background-color: #fbeb9c;
 }
 
 .social-links {
@@ -111,6 +115,10 @@ body {
 .social-links .button img {
     width: 20px;
     height: 20px;
+}
+
+.sidebar .social-links .button:hover img {
+    filter: invert(1);
 }
 
 .container2 {
@@ -160,8 +168,11 @@ body {
 }
 
 .main-content a {
-    color: #006fff;
+    color: #ffefb8;
     font-weight: bold;
     text-decoration: underline;
-    /*font-family: "Georgia", serif;*/
+}
+
+.main-content a:hover {
+    color: #fbeb9c;
 }
