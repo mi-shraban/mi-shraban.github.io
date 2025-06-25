@@ -1,3 +1,4 @@
+/*desktop display*/
 * {
     margin: 0;
     padding: 0;
@@ -176,6 +177,7 @@ body {
     color: #fbeb9c;
 }
 
+/*phone display*/
 @media (max-width: 1080px) {
     body {
         flex-direction: column;
