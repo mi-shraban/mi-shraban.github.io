@@ -216,11 +216,12 @@ body {
 
     .profile-picture {
         width: 60%;
-        margin: 5% auto;
+        margin: 3% auto;
     }
 
     .sidebar h1 {
         text-align: center;
+        margin-bottom: 3%;
     }
 
     .sidebar nav {
