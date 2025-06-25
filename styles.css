@@ -176,7 +176,7 @@ body {
     color: #fbeb9c;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     body {
         flex-direction: column;
         align-items: stretch;
