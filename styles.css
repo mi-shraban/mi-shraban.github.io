@@ -178,14 +178,18 @@ body {
 }
 
 /*phone display*/
-@media (max-width: 1080px) {
+@media (orientation: portrait) {
     body {
         flex-direction: column;
         align-items: stretch;
         height: auto;
     }
 
-    .container1, .container2 {
+    .container1 {
+        width: 100%;
+        height: 100%;
+    }
+    .container2 {
         width: 100%;
         height: auto;
     }
