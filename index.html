@@ -36,21 +36,18 @@
         </div>
     </div>
     <div class="container2">
-        <div class="main-content">
-            <div id="content-placeholder">
+        <div class="main-content" id="content-placeholder">
                 <!-- Content will be loaded here -->
-            </div>
         </div>
     </div>
 
     <script>
-        // Function to load content dynamically
         async function loadContent(url) {
             const response = await fetch(url);
-            const content = await response.text();
+            let content;
+            content = await response.text();
             document.getElementById('content-placeholder').innerHTML = content;
 
-            // Set the active button
             const buttons = document.querySelectorAll('.button');
             buttons.forEach(button => {
                 if (button.getAttribute('onclick').includes(url)) {
