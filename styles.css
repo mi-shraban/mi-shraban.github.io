@@ -157,15 +157,22 @@ body {
     margin-bottom: 10px;
 }
 
+.main-content h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
 .main-content ul {
     list-style-type: disc;
     padding-left: 20px;
-    /*font-family: "Georgia", serif;*/
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    /*margin-left: 25px;*/
 }
 
 .main-content li {
     margin-bottom: 10px;
+    margin-left: 25px;
 }
 
 .main-content a {
