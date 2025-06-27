@@ -164,6 +164,13 @@ body {
 }
 
 .main-content ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    /*margin-left: 25px;*/
+}
+
+.main-content ul ul {
     list-style-type: disc;
     padding-left: 20px;
     margin-bottom: 25px;
