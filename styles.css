@@ -1,4 +1,4 @@
-/*desktop display*/
+/* Desktop Display */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +14,7 @@ body {
     align-items: flex-start;
     height: 100vh;
     overflow-x: hidden;
+    flex-direction: row;
 }
 
 .container1 {
@@ -24,11 +25,10 @@ body {
 
 .sidebar {
     width: 100%;
-    background-color: #000000;
+    background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     text-align: left;
     padding-bottom: 20px;
 }
@@ -37,29 +37,26 @@ body {
     width: 80%;
     border-radius: 20px;
     object-fit: cover;
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 10% auto 0;
 }
 
 .sidebar h1 {
     font-size: 27px;
-    margin-left: 3%;
     color: #ffefb8;
+    margin-left: 3%;
 }
 
 .sidebar p {
     font-size: 17px;
-    font-weight: normal;
 }
 
 .sidebar a {
     text-decoration: none;
     color: white;
-    align-items: center;
 }
 
-.sidebar a.button:hover {
+.sidebar a.button:hover,
+.sidebar a.button_active:hover {
     color: black;
 }
 
@@ -67,21 +64,16 @@ body {
     color: black;
 }
 
-.sidebar a.button_active:hover {
-    color: black;
-}
-
 .button, .button_active {
     display: block;
-    align-items: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 0 auto;
     padding: 10px 20px;
     background-color: #2b3239;
     border-radius: 10px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    width: 70%;
 }
 
 .button:hover {
@@ -133,14 +125,11 @@ body {
     padding: 20px;
     background-color: #2b3239;
     overflow-y: auto;
-    width: 100%;
-    height: 100%;
 }
 
 .main-content h2 {
     font-size: 30px;
-    margin-top: 7%;
-    margin-bottom: 20px;
+    margin: 7% 0 20px;
 }
 
 .main-content p {
@@ -148,33 +137,26 @@ body {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
-    /*font-family: "Georgia", serif;*/
 }
 
 .main-content h3 {
     font-size: 20px;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin: 25px 0 10px;
 }
 
 .main-content h5 {
     font-size: 18px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 0 0 10px 10px;
 }
 
 .main-content ul {
     list-style-type: square;
     padding-left: 20px;
     margin-bottom: 25px;
-    /*margin-left: 25px;*/
 }
 
 .main-content ul ul {
     list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 25px;
-    /*margin-left: 25px;*/
 }
 
 .main-content li {
@@ -191,7 +173,7 @@ body {
     color: #fbeb9c;
 }
 
-/*phone display*/
+/* Phone Display */
 @media (orientation: portrait) {
     body {
         flex-direction: column;
@@ -199,17 +181,12 @@ body {
         height: auto;
     }
 
-    .container1 {
-        width: 100%;
-        height: 100%;
-    }
-    .container2 {
+    .container1, .container2 {
         width: 100%;
         height: auto;
     }
 
     .sidebar {
-        flex-direction: column;
         height: auto;
     }
 
@@ -245,7 +222,7 @@ body {
     }
 
     .button, .button_active {
-        margin: 10px auto;
         width: 80%;
+        margin: 10px auto;
     }
 }
