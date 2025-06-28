@@ -43,7 +43,7 @@ body {
 .sidebar h1 {
     font-size: 27px;
     color: #ffefb8;
-    margin-left: 3%;
+    text-align: center;
 }
 
 .sidebar p {
