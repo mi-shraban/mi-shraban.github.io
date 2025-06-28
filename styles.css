@@ -129,14 +129,14 @@ body {
 
 .text-box {
     background-color: #2b3239;
-    border: 2px solid #ffefb8;
+    border: 3px solid #ffefb8;
     border-radius: 15px;
     padding: 5px 15px;
     margin-bottom: 2%;
 }
 
 .text-box:hover {
-    border: 2px solid #fbeb9c;
+    border: 3px solid #fbeb9c;
 }
 
 .main-content h2 {
