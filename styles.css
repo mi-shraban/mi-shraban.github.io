@@ -127,6 +127,18 @@ body {
     overflow-y: auto;
 }
 
+.text-box {
+    background-color: #2b3239;
+    border: 2px solid #ffefb8;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-bottom: 3%;
+}
+
+.text-box:hover {
+    border: 3px solid #fbeb9c;
+}
+
 .main-content h2 {
     font-size: 30px;
     margin: 7% 0 20px;
