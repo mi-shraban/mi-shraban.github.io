@@ -144,8 +144,8 @@ body {
     margin: 3% 0 20px;
 }
 
-.container2 .aboutme h2, .container2 .research h2, .container2 .experience h2, .container2 .education h2{
-    margin-top: 7%;
+.container2 .aboutme h2, .container2 .research h2, .container2 .experience h2, .container2 .education h2, .container2 .skills h2 {
+    margin-top: 6%;
 }
 
 .main-content h3 {
