@@ -190,19 +190,6 @@ body {
     color: #fbeb9c;
 }
 
-.pdf-container,
-.pdf-wrapper,
-.pdf-frame {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: none;
-    display: block;
-    background-color: #2b3239;
-}
-
 
 /* Phone Display */
 @media (orientation: portrait) {
@@ -255,14 +242,5 @@ body {
     .button, .button_active {
         width: 80%;
         margin: 10px auto;
-    }
-
-    .pdf-container {
-        height: 100vh;
-    }
-
-    .pdf-wrapper,
-    .pdf-frame {
-        height: 100%;
     }
 }
