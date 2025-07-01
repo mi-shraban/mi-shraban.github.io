@@ -189,6 +189,26 @@ body {
     color: #fbeb9c;
 }
 
+.pdf-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.pdf-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
 /* Phone Display */
 @media (orientation: portrait) {
     body {
