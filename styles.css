@@ -209,6 +209,14 @@ body {
     display: block;
 }
 
+.pdf-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+
 /* Phone Display */
 @media (orientation: portrait) {
     body {
@@ -260,5 +268,26 @@ body {
     .button, .button_active {
         width: 80%;
         margin: 10px auto;
+    }
+
+    .pdf-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b3239;
+    }
+
+    .pdf-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pdf-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
     }
 }
