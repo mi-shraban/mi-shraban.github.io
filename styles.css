@@ -76,16 +76,13 @@ body {
     width: 70%;
 }
 
-.button:hover {
+.button:hover,
+.button_active:hover {
     background-color: #fbeb9c;
 }
 
 .button_active {
     background-color: #ffefb8;
-}
-
-.button_active:hover {
-    background-color: #fbeb9c;
 }
 
 .social-links {
@@ -144,7 +141,11 @@ body {
     margin: 3% 0 20px;
 }
 
-.container2 .aboutme h2, .container2 .research h2, .container2 .experience h2, .container2 .education h2, .container2 .skills h2 {
+.container2 .aboutme h2,
+.container2 .research h2,
+.container2 .experience h2,
+.container2 .education h2,
+.container2 .skills h2 {
     margin-top: 6%;
 }
 
@@ -189,31 +190,17 @@ body {
     color: #fbeb9c;
 }
 
-.pdf-container {
+.pdf-container,
+.pdf-wrapper,
+.pdf-frame {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
-
-.pdf-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.pdf-wrapper iframe {
-    width: 100%;
-    height: 100%;
     border: none;
     display: block;
-}
-
-.pdf-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+    background-color: #2b3239;
 }
 
 
@@ -271,23 +258,11 @@ body {
     }
 
     .pdf-container {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #2b3239;
+        height: 100vh;
     }
 
-    .pdf-wrapper {
-        width: 100%;
-        height: 100%;
-    }
-
+    .pdf-wrapper,
     .pdf-frame {
-        width: 100%;
         height: 100%;
-        border: none;
-        display: block;
     }
 }
