@@ -13,8 +13,14 @@ body {
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
-    overflow-x: hidden;
     flex-direction: row;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #ffefb8 #2b3239;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
 }
 
 .container1 {
@@ -201,6 +207,8 @@ body {
         flex-direction: column;
         align-items: stretch;
         height: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #ffefb8 #2b3239;
     }
 
     .container1, .container2 {
