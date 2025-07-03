@@ -16,11 +16,7 @@ body {
     flex-direction: row;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #ffefb8 #2b3239;
-}
-
-body::-webkit-scrollbar {
-  width: 5px;
+    scrollbar-color: #fbeb9c #2b3239;
 }
 
 .container1 {
