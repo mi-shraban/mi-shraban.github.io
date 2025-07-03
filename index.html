@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Portfolio of Monowarul Islam</title>
@@ -24,7 +25,7 @@
             <h1>MD. MONOWARUL ISLAM<br><p>Computer Science Student</p></h1>
 
             <nav>
-                <a href="#about_me" class="button" onclick="loadContent('aboutme.html')">About Me</a><br>
+                <a href="#aboutme" class="button" onclick="loadContent('aboutme.html')">About Me</a><br>
                 <a href="#education" class="button" onclick="loadContent('education.html')">Education</a><br>
                 <a href="#projects" class="button" onclick="loadContent('projects.html')">Projects</a><br>
                 <a href="#skills" class="button" onclick="loadContent('skills.html')">Skills</a><br>
@@ -43,30 +44,132 @@
     </div>
 
     <div class="container2">
-        <div class="main-content" id="content-placeholder">
-                <!-- Content will be loaded here -->
+        <div class="main-content">
+            <div id="aboutme" class="section">
+                <!-- About Me content will be loaded here -->
+            </div>
+
+            <div id="education" class="section">
+                <!-- Education content will be loaded here -->
+            </div>
+
+            <div id="projects" class="section">
+                <!-- Projects content will be loaded here -->
+            </div>
+
+            <div id="skills" class="section">
+                <!-- Skills content will be loaded here -->
+            </div>
+
+            <div id="research" class="section">
+                <!-- Research content will be loaded here -->
+            </div>
+
+            <div id="experience" class="section">
+                <!-- Experience content will be loaded here -->
+            </div>
         </div>
     </div>
 
     <script>
-        async function loadContent(url) {
-            const response = await fetch(url);
-            let content;
-            content = await response.text();
-            document.getElementById('content-placeholder').innerHTML = content;
+        // Object to store loaded content
+        const loadedContent = {};
 
-            const buttons = document.querySelectorAll('.button');
+        // Array of sections to load
+        const sections = [
+            { id: 'aboutme', file: 'aboutme.html' },
+            { id: 'education', file: 'education.html' },
+            { id: 'projects', file: 'projects.html' },
+            { id: 'skills', file: 'skills.html' },
+            { id: 'research', file: 'research.html' },
+            { id: 'experience', file: 'experience.html' }
+        ];
+
+        // Function to load content from external files
+        async function loadContent(sectionId, fileName) {
+            try {
+                const response = await fetch(fileName);
+                const content = await response.text();
+                loadedContent[sectionId] = content;
+                document.getElementById(sectionId).innerHTML = content;
+            } catch (error) {
+                console.error(`Error loading ${fileName}:`, error);
+                document.getElementById(sectionId).innerHTML = `<p>Error loading content for ${sectionId}</p>`;
+            }
+        }
+
+        // Function to load all sections
+        async function loadAllSections() {
+            const loadPromises = sections.map(section =>
+                loadContent(section.id, section.file)
+            );
+
+            await Promise.all(loadPromises);
+
+            // Set initial active button
+            updateActiveButton('aboutme');
+        }
+
+        // Function to scroll to a specific section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveButton(sectionId);
+            }
+        }
+
+        // Function to update active button
+        function updateActiveButton(activeSectionId) {
+            const buttons = document.querySelectorAll('.sidebar nav .button');
             buttons.forEach(button => {
-                if (button.getAttribute('onclick').includes(url)) {
+                button.classList.remove('button_active');
+                if (button.getAttribute('onclick').includes(activeSectionId)) {
                     button.classList.add('button_active');
-                } else {
-                    button.classList.remove('button_active');
                 }
             });
         }
 
-        // Load home content on page load
-        window.onload = () => loadContent('aboutme.html');
+        // Function to handle scroll and update active button
+        function handleScroll() {
+            const sections = document.querySelectorAll('.section');
+            let currentSection = 'aboutme';
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom > 100) {
+                    currentSection = section.id;
+                }
+            });
+
+            updateActiveButton(currentSection);
+        }
+
+        function handleSectionHover(event) {
+            const section = event.target.closest('.section');
+            if (section) {
+                updateActiveButton(section.id);
+            }
+        }
+
+        // Function to handle mouse leave from sections
+        function handleSectionLeave() {
+            handleScroll();
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        document.addEventListener('mouseover', handleSectionHover);
+        document.addEventListener('mouseleave', handleSectionLeave);
+
+        // Load all content when page loads
+        window.onload = () => {
+            loadAllSections();
+        };
     </script>
 
 </body>

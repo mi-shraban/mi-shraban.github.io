@@ -138,15 +138,7 @@ body {
 
 .main-content h2 {
     font-size: 30px;
-    margin: 3% 0 20px;
-}
-
-.container2 .aboutme h2,
-.container2 .research h2,
-.container2 .experience h2,
-.container2 .education h2,
-.container2 .skills h2 {
-    margin-top: 6%;
+    margin: 6% 0 20px;
 }
 
 .main-content h3 {
@@ -188,6 +180,18 @@ body {
 
 .main-content a:hover {
     color: #fbeb9c;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 20px 0;
+    scroll-margin-top: 0;
+}
+
+.section:not(:last-child) {
+    border-bottom: 3px solid #ffefb8;
+    margin-bottom: 4%;
+    padding-bottom: 4%;
 }
 
 
@@ -242,5 +246,17 @@ body {
     .button, .button_active {
         width: 80%;
         margin: 10px auto;
+    }
+
+    .section {
+        min-height: auto;
+        padding: 20px 0;
+        scroll-margin-top: 0;
+    }
+
+    .section:not(:last-child) {
+        border-bottom: 3px solid #ffefb8;
+        margin-bottom: 4%;
+        padding-bottom: 4%;
     }
 }
