@@ -207,11 +207,14 @@ body::-webkit-scrollbar {
         flex-direction: column;
         align-items: stretch;
         height: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #ffefb8 #2b3239;
     }
 
-    .container1, .container2 {
+    .container1{
+        width: 100%;
+        height: 100%;
+    }
+
+    .container2 {
         width: 100%;
         height: auto;
     }
