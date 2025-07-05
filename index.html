@@ -75,6 +75,9 @@
         // Object to store loaded content
         const loadedContent = {};
 
+        // Variable to track the last clicked section
+        let lastClickedSection = 'aboutme';
+
         // Array of sections to load
         const sections = [
             { id: 'aboutme', file: 'aboutme.html' },
@@ -118,6 +121,8 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Update the last clicked section when nav button is clicked
+                lastClickedSection = sectionId;
                 updateActiveButton(sectionId);
             }
         }
@@ -145,6 +150,8 @@
                 }
             });
 
+            // Update last clicked section based on scroll position
+            lastClickedSection = currentSection;
             updateActiveButton(currentSection);
         }
 
@@ -157,7 +164,8 @@
 
         // Function to handle mouse leave from sections
         function handleSectionLeave() {
-            handleScroll();
+            // Return to the last clicked section instead of scroll-based detection
+            updateActiveButton(lastClickedSection);
         }
 
         // Add scroll event listener
