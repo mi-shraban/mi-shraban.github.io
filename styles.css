@@ -38,6 +38,7 @@ body {
 .profile-picture {
     width: 80%;
     border-radius: 20px;
+    border: 2px solid #fbeb9c;
     object-fit: cover;
     margin: 10% auto 0;
 }
@@ -57,21 +58,15 @@ body {
     color: white;
 }
 
-.sidebar a.button:hover,
-.sidebar a.button_active:hover {
-    color: black;
-}
-
-.sidebar a.button_active {
-    color: black;
-}
+/*buttons*/
 
 .button, .button_active {
     display: block;
     margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #2b3239;
+    padding: 8px 18px;
+    background-color: #1c2025;
     border-radius: 10px;
+    border: 2px solid #fbeb9c;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -86,6 +81,19 @@ body {
 .button_active {
     background-color: #ffefb8;
 }
+
+.sidebar a.button:hover,
+.sidebar a.button_active:hover {
+    color: black;
+}
+
+.sidebar a.button_active {
+    color: black;
+}
+
+/*buttons*/
+
+/*soc links*/
 
 .social-links {
     display: flex;
@@ -113,6 +121,8 @@ body {
     filter: invert(1);
 }
 
+/*soc links*/
+
 .container2 {
     display: flex;
     width: 80%;
@@ -126,6 +136,8 @@ body {
     overflow-y: auto;
 }
 
+/*text box*/
+
 .text-box {
     background-color: #2b3239;
     border: 3px solid #ffefb8;
@@ -138,9 +150,69 @@ body {
     border: 3px solid #fbeb9c;
 }
 
+/*text-box*/
+
+/*form*/
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Makes it responsive on small screens */
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="subject"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffefb8;
+    border-radius: 10px;
+    background-color: #1c2025;
+    color: white;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #fbeb9c;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: Bold;
+    color: #ffefb8;
+}
+
+form button[type="submit"] {
+    margin-top: 10px;
+    background-color: #1c2025;
+    border: 2px solid #fbeb9c;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #fbeb9c;
+    color: black;
+}
+
+/*form*/
+
+
+/*header margin*/
+
 .main-content h2 {
     font-size: 30px;
-    margin: 6% 0 20px;
+    margin: 3% 0 20px;
 }
 
 .main-content h3 {
@@ -153,11 +225,12 @@ body {
     margin: 0 0 10px 0;
 }
 
+/*header margin*/
+
 .main-content p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
-    text-align: justify;
 }
 
 .main-content ul {
