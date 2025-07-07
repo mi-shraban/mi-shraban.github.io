@@ -265,7 +265,6 @@ form button[type="submit"]:hover {
 
 .section:not(:last-child) {
     border-bottom: 3px solid #ffefb8;
-    margin-bottom: 4%;
     padding-bottom: 4%;
 }
 
