@@ -171,7 +171,7 @@ form input[type="subject"],
 form textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ffefb8;
+    border: 1px solid #ffefb8;
     border-radius: 10px;
     background-color: #1c2025;
     color: white;
