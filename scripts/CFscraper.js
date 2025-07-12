@@ -115,7 +115,6 @@ async function fetchSubmissions() {
 }
 
 
-// Load submissions when page loads
 window.onload = () => {
     fetchSubmissions();
 };
