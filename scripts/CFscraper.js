@@ -82,9 +82,6 @@ async function fetchSubmissions() {
 
 
         filtered.forEach((entry, i) => {
-            // https://github.com/monowarulIslamShraban/cf_solves/blob/main/1033A.py
-            // https://github.com/monowarulIslamShraban/cf_solves/blob/main/1030A.cpp
-
             var solve_file = ""
             if (entry.language === "Python") {
                 solve_file = `${entry.id}.py`;
@@ -103,8 +100,8 @@ async function fetchSubmissions() {
                     </div>
                     <div class="submission-details">Language: ${entry.language}</div>
                     <div class="tag">
-                        <a href="https://github.com/monowarulIslamShraban/cf_solves/blob/main/${solve_file}" 
-                           target="_blank" class="solution-link">View my Solution
+                        <a href="https://github.com/monowarulIslamShraban/cf_solves/blob/main/${solve_file}" target="_blank" class="solution-link">
+                           View my Solution
                         </a>
                     </div>
                 </div>
@@ -116,6 +113,7 @@ async function fetchSubmissions() {
         container.innerHTML = `<div class="error">Error: ${e.message}</div>`;
     }
 }
+
 
 // Load submissions when page loads
 window.onload = () => {
