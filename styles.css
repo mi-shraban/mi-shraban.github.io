@@ -1,4 +1,4 @@
-/* Desktop Display */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,235 +6,158 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #2b3239;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    flex-direction: row;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #fbeb9c #2b3239;
+    scrollbar-color: #00bcd4 #121212;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #00bcd4;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0097a7;
+}
+
+.ab_link{
+    font-weight: bold;
 }
 
 .container1 {
-    display: flex;
     width: 20%;
-    height: 100%;
-}
-
-.sidebar {
-    width: 100%;
-    background-color: #000;
+    background-color: #1e1e1e;
+    height: 100vh;
+    position: fixed;
     display: flex;
+    margin-left: 5%;
     flex-direction: column;
     justify-content: space-between;
-    text-align: left;
-    padding-bottom: 20px;
+    padding: 20px;
+    border-right: 1px solid #2a2a2a;
+    border-radius: 15px;
 }
 
-.profile-picture {
+.sidebar .profile-picture {
     width: 80%;
-    border-radius: 20px;
-    border: 2px solid #fbeb9c;
+    /*height: 300px;*/
+    border-radius: 50%;
+    border: 3px solid #00bcd4;
     object-fit: cover;
-    margin: 10% auto 0;
+    margin: auto;
+    display: block;
 }
 
 .sidebar h1 {
-    font-size: 27px;
-    color: #ffefb8;
+    font-size: 24px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.sidebar p {
-    font-size: 17px;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: white;
-}
-
-/*buttons*/
-
-.button, .button_active {
+.sidebar h1 small {
+    font-size: 16px;
     display: block;
-    margin: 0 auto;
-    padding: 8px 18px;
-    background-color: #1c2025;
-    border-radius: 10px;
-    border: 2px solid #fbeb9c;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    width: 70%;
+    color: #b0b0b0;
 }
 
-.button:hover,
-.button_active:hover {
-    background-color: #fbeb9c;
+.sidebar nav a {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.button_active {
-    background-color: #ffefb8;
+.sidebar nav a:hover,
+.sidebar nav a.button_active {
+    background-color: #00bcd4;
+    color: #121212;
 }
-
-.sidebar a.button:hover,
-.sidebar a.button_active:hover {
-    color: black;
-}
-
-.sidebar a.button_active {
-    color: black;
-}
-
-/*buttons*/
-
-/*soc links*/
 
 .social-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 5px;
-}
-
-.social-links .button {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 10%;
-    margin: 0 auto;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a2a;
 }
 
-.social-links .button img {
-    width: 20px;
-    height: 20px;
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #00bcd4;
+    padding: 3px;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
 }
 
-.sidebar .social-links .button:hover img {
-    filter: invert(1);
+.social-links a:hover img {
+    transform: scale(1.2);
 }
-
-/*soc links*/
 
 .container2 {
-    display: flex;
-    width: 80%;
-    height: 100%;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #2b3239;
+    margin-left: 25%;
+    width: 75%;
+    padding: 40px;
     overflow-y: auto;
+    height: 100vh;
 }
 
-/*text box*/
-
-.text-box {
-    background-color: #2b3239;
-    border: 3px solid #ffefb8;
-    border-radius: 15px;
-    padding: 5px 15px;
-    margin-bottom: 2%;
+.main-content .section {
+    padding: 40px 0;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-.text-box:hover {
-    border: 3px solid #fbeb9c;
+.main-content .section:last-child {
+    border-bottom: none;
 }
-
-/*text-box*/
-
-/*form*/
-
-.form-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Makes it responsive on small screens */
-}
-
-.form-group {
-    flex: 1;
-    min-width: 200px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="subject"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ffefb8;
-    border-radius: 10px;
-    background-color: #1c2025;
-    color: white;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #fbeb9c;
-}
-
-form label {
-    font-size: 16px;
-    font-weight: Bold;
-    color: #ffefb8;
-}
-
-form button[type="submit"] {
-    margin-top: 10px;
-    background-color: #1c2025;
-    border: 2px solid #fbeb9c;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-
-form button[type="submit"]:hover {
-    background-color: #fbeb9c;
-    color: black;
-}
-
-/*form*/
-
-
-/*header margin*/
 
 .main-content h2 {
-    font-size: 30px;
-    margin: 3% 0 20px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00bcd4;
 }
 
 .main-content h3 {
-    font-size: 20px;
-    margin: 15px 0 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .main-content h5 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-/*header margin*/
+.text-box {
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 4%;
+}
 
 .main-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    text-align: justify;
+    margin-right: 5%;
+}
+
+.text-box p {
+    text-align: justify;
+    margin-right: 0;
 }
 
 .main-content ul {
@@ -248,137 +171,132 @@ form button[type="submit"]:hover {
 }
 
 .main-content li {
-    margin-bottom: 10px;
-    margin-left: 25px;
+    margin-bottom: 5px;
+    margin-left: 1%;
 }
 
-.ab_link{
-    color: #ffefb8;
+/* Form Styles */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #00bcd4;
+}
+
+form label {
+    font-size: 16px;
     font-weight: bold;
+    color: #00bcd4;
 }
 
-.ab_link:hover{
-    color: #fbeb9c;
+form button[type="submit"] {
+    margin-top: 10px;
+    background-color: #00bcd4;
+    border: none;
+    color: #121212;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.ap_link{
-    color: #ffefb8;
+form button[type="submit"]:hover {
+    background-color: #0097a7;
 }
 
-.ap_link:hover{
-    color: #fbeb9c;
-}
-
-.section {
-    min-height: 100vh;
-    padding: 20px 0;
-    scroll-margin-top: 0;
-}
-
-.section:not(:last-child) {
-    border-bottom: 3px solid #ffefb8;
-    padding-bottom: 4%;
-}
-
-
-/* Additional styles specific to Codeforces submissions page */
+/* Codeforces Page */
 .containerCF {
-    width: 65%;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.page-title, .handle{
-    font-size: 36px;
-    color: #ffefb8;
+.page-title, .handle {
+    font-size: 32px;
+    color: #00bcd4;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.handle:hover{
-    color: #fbeb9c;
-}
-
 .header-info {
-    background-color: #2b3239;
-    border: 3px solid #ffefb8;
-    border-radius: 15px;
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
     text-align: center;
 }
 
-.header-info:hover {
-    border: 3px solid #fbeb9c;
-}
-
 .submissions-container {
-    background-color: #2b3239;
-    border: 3px solid #ffefb8;
-    border-radius: 15px;
-    padding: 2%;
+    background-color: #1e1e1e;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
     margin-bottom: 20px;
-    min-height: 400px;
-}
-
-.submissions-container:hover {
-    border: 3px solid #fbeb9c;
-}
-
-.loading {
-    text-align: center;
-    color: #ffefb8;
-    font-size: 18px;
 }
 
 .submission-item {
-    background-color: #2b3239;
-    border: 2px solid #ffefb8;
-    border-radius: 10px;
+    background-color: #2c2c2c;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
     padding: 15px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    margin-bottom: 15px;
 }
 
-.problem-title, .problem-title2 {
+.problem-title {
     font-size: 18px;
     font-weight: bold;
-    color: #ffefb8;
+    color: #00bcd4;
     margin-bottom: 10px;
-}
-
-.problem-title2:hover {
-    color: #fbeb9c;
 }
 
 .submission-details {
     font-size: 14px;
-    color: #ccc;
+    color: #b0b0b0;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
 .solution-link {
-    background-color: #ffefb8;
-    color: #1c2025;
-    padding: 3px 8px;
+    background-color: #00bcd4;
+    color: #121212;
+    padding: 5px 10px;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
-}
-
-.solution-link:hover {
-    background-color: #fbeb9c;
-    color: #1c2025;
 }
 
 .stats {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 2%;
+    margin-bottom: 20px;
     padding: 15px;
-    background-color: #1c2025;
-    border-radius: 10px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
 }
 
 .stat-item {
@@ -388,108 +306,59 @@ form button[type="submit"]:hover {
 .stat-number {
     font-size: 24px;
     font-weight: bold;
-    color: #fbeb9c;
+    color: #00bcd4;
 }
 
 .stat-label {
     font-size: 14px;
-    color: #ccc;
+    color: #b0b0b0;
 }
 
-.error {
-    color: #ff6b6b;
-    text-align: center;
-    font-size: 16px;
-    padding: 20px;
-}
-
-
-/* Phone Display */
-@media (orientation: portrait) {
+/* Responsive Design */
+@media (max-width: 1080px) {
     body {
         flex-direction: column;
-        align-items: stretch;
-        height: auto;
     }
 
-    .container1,
-    .container2 {
+    .container1 {
         width: 100%;
+        margin: 0 0 0 0;
         height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #2a2a2a;
     }
 
-    .sidebar {
-        height: auto;
-    }
-
-    .main-content {
-        padding: 15px;
-        height: auto;
-    }
-
-    .social-links {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .social-links .button {
-        width: 40px;
-        margin: 5px;
-    }
-
-    .profile-picture {
-        width: 60%;
-        margin: 3% auto;
+    .sidebar .profile-picture {
+        width: 40%;
     }
 
     .sidebar h1 {
-        text-align: center;
-        margin-bottom: 3%;
+        font-size: 20px;
     }
 
     .sidebar nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .button, .button_active {
-        width: 80%;
-        margin: 10px auto;
+    .sidebar nav a {
+        margin: 5px;
     }
 
-    .section {
-        min-height: auto;
-        padding: 20px 0;
-        scroll-margin-top: 0;
+    .container2 {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+        height: auto;
     }
 
-    .section:not(:last-child) {
-        border-bottom: 3px solid #ffefb8;
-        margin-bottom: 4%;
-        padding-bottom: 4%;
-    }
-
-    /* Additional styles specific to Codeforces submissions page */
-    .containerCF {
-        min-width: 80%;
-        padding: 10px;
-    }
-
-    .page-title {
+    .main-content h2 {
         font-size: 28px;
     }
 
-    .submission-item {
-        padding: 12px;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .tags {
-        justify-content: center;
+    .main-content p, .text-box {
+        margin-right: 0;
     }
 }

@@ -15,33 +15,34 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="profile.jpg">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="icons/free_icon.png" type="image/png">
 
 </head>
 <body>
     <div class="container1">
         <div class="sidebar">
+            <br>
             <img src="photos/profile.jpg" alt="Profile Picture" class="profile-picture">
-
+            <br>
             <h1>MD. MONOWARUL ISLAM<br><small>Computer Science Student</small></h1>
+            <br>
 
             <nav>
-                <a href="#aboutme" class="button" onclick="loadContent('aboutme.html')">About Me</a><br>
-                <a href="#education" class="button" onclick="loadContent('education.html')">Education</a><br>
-                <a href="#projects" class="button" onclick="loadContent('projects.html')">Projects</a><br>
-                <a href="#skills" class="button" onclick="loadContent('skills.html')">Skills</a><br>
-                <a href="#research" class="button" onclick="loadContent('research.html')">Research</a><br>
+                <a href="#aboutme" class="button" onclick="loadContent('aboutme.html')">About Me</a>
+                <a href="#education" class="button" onclick="loadContent('education.html')">Education</a>
+                <a href="#projects" class="button" onclick="loadContent('projects.html')">Projects</a>
+                <a href="#skills" class="button" onclick="loadContent('skills.html')">Skills</a>
+                <a href="#research" class="button" onclick="loadContent('research.html')">Research</a>
                 <a href="#experience" class="button" onclick="loadContent('experience.html')">Experience</a>
             </nav>
 
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/md-monowarul-islam-b7657b341/"  class="button" target="_blank"><img src="icons/linkedin-white.svg" alt="LinkedIn"></a>
-                <a href="https://github.com/monowarulIslamShraban"  class="button" target="_blank"><img src="icons/github-white.svg" alt="Github"></a>
-                <a href="https://codeforces.com/profile/xordan.-" class="button" target="_blank"><img src="icons/codeforces-white.svg" alt="Codeforces"></a>
-                <a href="https://steamcommunity.com/profiles/76561198962903675/"  class="button" target="_blank"><img src="icons/steam-white.svg" alt="Steam"></a>
+                <a href="https://www.linkedin.com/in/md-monowarul-islam-b7657b341/" target="_blank"><img src="icons/linkedin-white.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/monowarulIslamShraban" target="_blank"><img src="icons/github-white.svg" alt="Github"></a>
+                <a href="https://codeforces.com/profile/xordan.-" target="_blank"><img src="icons/codeforces-white.svg" alt="Codeforces"></a>
+                <a href="https://steamcommunity.com/profiles/76561198962903675/" target="_blank"><img src="icons/steam-white.svg" alt="Steam"></a>
             </div>
-
         </div>
     </div>
 
@@ -70,10 +71,58 @@
             <div id="experience" class="section">
                 <!-- Experience content will be loaded here -->
             </div>
+            <div id="reachout" class="section">
+                <div class="text-box">
+                    <h3 align="center">You Can reach out to me by filling out this form
+                        </br>
+                        <p align="center">
+                            I will mail you back as soon as possible.
+                        </p>
+                        <br>
+                    </h3>
+
+                    <form action="https://formspree.io/f/mblyeyvz" target="_blank" method="POST">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name:</label><br>
+                                <input type="text" placeholder="Your Name" id="name" name="name" required></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label><br>
+                                <input type="email" placeholder="Your Email Address" id="email" name="_replyto" required></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject:</label><br>
+                                <input type="text" placeholder="Topic" id="subject" name="_subject" required></input>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="message">Message:</label><br>
+                                <textarea id="message" placeholder="Please elaborate on the topic." name="message" rows="4" required></textarea><br><br>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button">Send Mail</button>
+                    </form>
+                </div>
+
+                <h3>My Contact Information:</h3>
+                <ul>
+                    <li>Email: <b>monowarul7ii@gmail.com</b></li>
+                    <li>Discord: <b>xordan77</b></li>
+                    <li>Telegram: <b>@xordan7</b></li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <script src="scripts/index.js"></script>
+
+
 
 </body>
 </html>
