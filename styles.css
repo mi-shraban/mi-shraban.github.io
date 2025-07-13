@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #2b3239;
     color: white;
     display: flex;
@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: #fbeb9c #2b3239;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container1 {
@@ -468,6 +472,7 @@ form button[type="submit"]:hover {
 
     /* Additional styles specific to Codeforces submissions page */
     .containerCF {
+        min-width: 80%;
         padding: 10px;
     }
 
