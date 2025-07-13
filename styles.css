@@ -295,6 +295,7 @@ form button[type="submit"]:hover {
 .solution-link:hover {
     color: #121212;
     background-color: #0097a7;
+    transition: background-color 0.3s ease;
 }
 
 .stats {
@@ -322,7 +323,7 @@ form button[type="submit"]:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 1080px) {
+@media (max-width: 1440px) {
     body {
         flex-direction: column;
     }
