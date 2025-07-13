@@ -373,5 +373,6 @@ form button[type="submit"]:hover {
     }
     .containerCF{
         width: 90%;
+        max-width: 90%;
     }
 }
