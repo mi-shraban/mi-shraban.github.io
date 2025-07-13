@@ -371,4 +371,7 @@ form button[type="submit"]:hover {
     .main-content p, .text-box {
         margin-right: 0;
     }
+    .containerCF{
+        width: 90%;
+    }
 }
