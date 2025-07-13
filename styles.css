@@ -248,12 +248,20 @@ form button[type="submit"]:hover {
     margin-left: 25px;
 }
 
-.main-content a {
+.ab_link{
     color: #ffefb8;
     font-weight: bold;
 }
 
-.main-content a:hover {
+.ab_link:hover{
+    color: #fbeb9c;
+}
+
+.ap_link{
+    color: #ffefb8;
+}
+
+.ap_link:hover{
     color: #fbeb9c;
 }
 
