@@ -236,6 +236,7 @@ form button[type="submit"]:hover {
     padding: 20px;
 }
 
+
 .page-title, .handle {
     font-size: 32px;
     color: #00bcd4;
@@ -276,7 +277,7 @@ form button[type="submit"]:hover {
 }
 
 .submission-details {
-    font-size: 14px;
+    font-size: 15px;
     color: #b0b0b0;
     margin-bottom: 10px;
 }
@@ -288,6 +289,12 @@ form button[type="submit"]:hover {
     border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 10px;
+}
+
+.solution-link:hover {
+    color: #121212;
+    background-color: #0097a7;
 }
 
 .stats {

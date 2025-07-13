@@ -28,6 +28,8 @@ async function fetchSubmissions() {
             const contestId = problem.contestId || "N/A";
             const index = problem.index || "?";
             const lang = sub.programmingLanguage || "Unknown Lang";
+            const timestamp = sub.creationTimeSeconds;
+            const dateTime = new Date(timestamp * 1000).toLocaleString();
 
             if (verdictFilter && verdict !== verdictFilter) return;
             if (seen.has(problemName)) return;
@@ -51,7 +53,8 @@ async function fetchSubmissions() {
                 name: problemName,
                 id: `${contestId}${index}`,
                 verdict,
-                language: language
+                language: language,
+                time: dateTime
             });
         });
 
@@ -98,7 +101,8 @@ async function fetchSubmissions() {
                             [${entry.name}]
                         </a>
                     </div>
-                    <div class="submission-details">Language: ${entry.language}</div>
+                    <div class="submission-details">Language used: <b>${entry.language}</b></div>
+                    <div class="submission-details">Submitted on: <b>${entry.time}</b></div>
                     <div class="tag">
                         <a href="https://github.com/monowarulIslamShraban/cf_solves/blob/main/${solve_file}" target="_blank" class="solution-link">
                            View my Solution
