@@ -66,7 +66,7 @@ a:hover {
 
 .sidebar h1 small {
     font-size: 16px;
-    display: block;
+    display: inline;
     color: #b0b0b0;
 }
 
@@ -131,6 +131,7 @@ a:hover {
 }
 
 .main-content h3 {
+    font-size: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -176,6 +177,21 @@ a:hover {
     margin-bottom: 5px;
     margin-left: 1%;
 }
+
+.download_button {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: #00bcd4;
+    color: #121212;
+}
+
+.download_button:hover {
+    background-color: #0097a7;
+    color: #121212;
+}
+
 
 /* Form Styles */
 .form-row {
@@ -327,7 +343,7 @@ form button[type="submit"]:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (orientation: portrait) {
     body {
         flex-direction: column;
     }
