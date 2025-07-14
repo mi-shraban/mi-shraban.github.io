@@ -103,7 +103,7 @@ async function fetchSubmissions() {
                     </div>
                     <div class="submission-details">Language used: <b>${entry.language}</b></div>
                     <div class="submission-details">Submitted on: <b>${entry.time}</b></div>
-                    <div class="tag">
+                    <div class="soln_link">
                         <a href="https://github.com/monowarulIslamShraban/cf_solves/blob/main/${solve_file}" target="_blank" class="solution-link">
                            View my Solution
                         </a>
