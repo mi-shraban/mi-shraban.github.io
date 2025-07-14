@@ -57,7 +57,7 @@ function updateActiveButton(activeSectionId) {
     const buttons = document.querySelectorAll('.sidebar nav .button');
     buttons.forEach(button => {
         button.classList.remove('button_active');
-        if (button.getAttribute('onclick').includes(activeSectionId)) {
+        if (button.getAttribute('href') === '#' + activeSectionId) {
             button.classList.add('button_active');
         }
     });
@@ -96,10 +96,31 @@ function handleSectionLeave() {
 // Add scroll event listener
 window.addEventListener('scroll', handleScroll);
 
-document.addEventListener('mouseover', handleSectionHover);
-document.addEventListener('mouseleave', handleSectionLeave);
+// Add mouseover and mouseleave event listeners to the main content area
+const mainContent = document.querySelector('.main-content');
+if (mainContent) {
+    mainContent.addEventListener('mouseover', handleSectionHover);
+    mainContent.addEventListener('mouseleave', handleSectionLeave);
+}
+
+// Add click listeners to nav buttons
+document.querySelectorAll('.sidebar nav .button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const sectionId = button.getAttribute('href').substring(1);
+        scrollToSection(sectionId);
+    });
+});
 
 // Load all content when page loads
-window.onload = () => {
-    loadAllSections();
+window.onload = async () => {
+    // Load aboutme.html first
+    await loadContent('aboutme', 'aboutme.html');
+    updateActiveButton('aboutme');
+
+    // Load other sections in the background
+    const otherSections = sections.filter(section => section.id !== 'aboutme');
+    otherSections.forEach(section => {
+        loadContent(section.id, section.file);
+    });
 };
