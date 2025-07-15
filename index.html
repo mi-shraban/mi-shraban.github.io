@@ -23,12 +23,19 @@
     <div class="container1">
         <div class="sidebar">
             <br>
-            <img src="photos/profile.jpg" alt="Profile Picture" class="profile-picture">
+            <div class="profile-header">
+                <img src="photos/profile.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <br>
             <h1>MD. MONOWARUL ISLAM<br><small>Computer Science Student</small></h1>
             <br>
 
-            <nav>
+            <nav id="accordion-menu">
                 <a href="#aboutme" class="button">About Me</a>
                 <a href="#education" class="button">Education</a>
                 <a href="#projects" class="button">Projects</a>
@@ -71,6 +78,7 @@
             <div id="experience" class="section">
                 <!-- Experience content will be loaded here -->
             </div>
+
             <div id="reachout" class="section">
                 <div class="text-box">
                     <h3 align="center">You Can reach out to me by filling out this form
@@ -80,7 +88,6 @@
                         </small>
                     </h3>
                     <br>
-
                     <form action="https://formspree.io/f/mblyeyvz" target="_blank" method="POST">
 
                         <div class="form-row">
@@ -93,6 +100,7 @@
                                 <label for="email">Email:</label><br>
                                 <input type="email" placeholder="Your Email Address" id="email" name="_replyto" required></input>
                             </div>
+
                             <div class="form-group">
                                 <label for="subject">Subject:</label><br>
                                 <input type="text" placeholder="Topic" id="subject" name="_subject" required></input>

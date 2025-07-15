@@ -48,13 +48,17 @@ a:hover {
     border-radius: 15px;
 }
 
-.sidebar .profile-picture {
+.profile-header {
+    position: relative;
     width: 80%;
-    /*height: 300px;*/
+    margin: auto;
+}
+
+.sidebar .profile-picture {
+    width: 100%;
     border-radius: 50%;
     border: 3px solid #00bcd4;
     object-fit: cover;
-    margin: auto;
     display: block;
 }
 
@@ -84,6 +88,10 @@ a:hover {
 .sidebar nav a.button_active {
     background-color: #00bcd4;
     color: #121212;
+}
+
+.hamburger-menu {
+    display: none;
 }
 
 .social-links {
@@ -344,36 +352,67 @@ form button[type="submit"]:hover {
 }
 
 /* Responsive Design */
-@media (orientation: portrait) {
+@media (max-width: 768px) {
     body {
         flex-direction: column;
     }
 
     .container1 {
         width: 100%;
-        margin: 0 0 0 0;
+        margin: 0;
         height: auto;
         position: static;
         border-right: none;
         border-bottom: 1px solid #2a2a2a;
     }
 
-    .sidebar .profile-picture {
+    .profile-header {
         width: 40%;
+    }
+
+    .sidebar .profile-picture {
+        width: 100%;
     }
 
     .sidebar h1 {
         font-size: 20px;
     }
 
-    .sidebar nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    #accordion-menu {
+        display: none; /* Hide by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    #accordion-menu.active {
+        display: flex; /* Show when hamburger is clicked */
     }
 
     .sidebar nav a {
         margin: 5px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: -50px; /* Adjust this to position it relative to the profile image */
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #e0e0e0;
+        border-radius: 3px;
+        z-index: 1;
     }
 
     .container2 {
