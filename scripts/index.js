@@ -1,128 +1,142 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loadedContent = {};
+const PageController = (() => {
+    // --- Configuration ---
+    const CONFIG = {
+        sidebarButtonSelector: '.sidebar nav .button',
+        mainContentSelector: '.main-content',
+        sectionSelector: '.section',
+        hamburgerId: 'hamburger-menu',
+        accordionId: 'accordion-menu',
+        initialSection: 'aboutme',
+        sections: [
+            { id: 'aboutme', file: 'aboutme.html' },
+            { id: 'education', file: 'education.html' },
+            { id: 'projects', file: 'projects.html' },
+            { id: 'skills', file: 'skills.html' },
+            { id: 'research', file: 'research.html' },
+            { id: 'experience', file: 'experience.html' }
+        ]
+    };
 
-    // Variable to track the last clicked section
-    let lastClickedSection = 'aboutme';
+    // --- State ---
+    const state = {
+        lastClickedSection: CONFIG.initialSection,
+        loadedContent: {}
+    };
 
-    // Array of sections to load
-    const sections = [
-        { id: 'aboutme', file: 'aboutme.html' },
-        { id: 'education', file: 'education.html' },
-        { id: 'projects', file: 'projects.html' },
-        { id: 'skills', file: 'skills.html' },
-        { id: 'research', file: 'research.html' },
-        { id: 'experience', file: 'experience.html' }
-    ];
+    // --- DOM Elements ---
+    const elements = {};
 
-    // Function to load content from external files
-    async function loadContent(sectionId, fileName) {
+    // --- Private Methods ---
+
+    const cacheDOMElements = () => {
+        elements.sidebarButtons = document.querySelectorAll(CONFIG.sidebarButtonSelector);
+        elements.mainContent = document.querySelector(CONFIG.mainContentSelector);
+        elements.sections = document.querySelectorAll(CONFIG.sectionSelector);
+        elements.hamburgerMenu = document.getElementById(CONFIG.hamburgerId);
+        elements.accordionMenu = document.getElementById(CONFIG.accordionId);
+    };
+
+    const loadContent = async (sectionId, fileName) => {
         try {
             const response = await fetch(fileName);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             const content = await response.text();
-            loadedContent[sectionId] = content;
-            document.getElementById(sectionId).innerHTML = content;
+            state.loadedContent[sectionId] = content;
+            const sectionElement = document.getElementById(sectionId);
+            if (sectionElement) sectionElement.innerHTML = content;
         } catch (error) {
             console.error(`Error loading ${fileName}:`, error);
-            document.getElementById(sectionId).innerHTML = `<p>Error loading content for ${sectionId}</p>`;
+            const sectionElement = document.getElementById(sectionId);
+            if(sectionElement) sectionElement.innerHTML = `<p>Error loading content for ${sectionId}</p>`;
         }
-    }
+    };
 
-    // Function to update active button
-    function updateActiveButton(activeSectionId) {
-        const buttons = document.querySelectorAll('.sidebar nav .button');
-        buttons.forEach(button => {
-            button.classList.remove('button_active');
-            if (button.getAttribute('href') === '#' + activeSectionId) {
-                button.classList.add('button_active');
-            }
+    const updateActiveButton = (activeSectionId) => {
+        elements.sidebarButtons.forEach(button => {
+            button.classList.toggle('button_active', button.getAttribute('href') === '#' + activeSectionId);
         });
-    }
+    };
 
-    // Function to scroll to a specific section
-    function scrollToSection(sectionId) {
+    const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Update the last clicked section when nav button is clicked
-            lastClickedSection = sectionId;
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            state.lastClickedSection = sectionId;
             updateActiveButton(sectionId);
         }
-    }
+    };
 
-    // Function to handle scroll and update active button
-    function handleScroll() {
-        const sections = document.querySelectorAll('.section');
-        let currentSection = 'aboutme';
+    // --- Event Handlers ---
 
-        sections.forEach(section => {
+    const handleScroll = () => {
+        let currentSection = state.lastClickedSection;
+        elements.sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             if (rect.top <= 100 && rect.bottom > 100) {
                 currentSection = section.id;
             }
         });
-
-        // Update last clicked section based on scroll position
-        lastClickedSection = currentSection;
+        state.lastClickedSection = currentSection;
         updateActiveButton(currentSection);
-    }
+    };
 
-    function handleSectionHover(event) {
-        const section = event.target.closest('.section');
+    const handleSectionHover = (event) => {
+        const section = event.target.closest(CONFIG.sectionSelector);
         if (section) {
             updateActiveButton(section.id);
         }
-    }
+    };
 
-    // Function to handle mouse leave from sections
-    function handleSectionLeave() {
-        // Return to the last clicked section instead of scroll-based detection
-        updateActiveButton(lastClickedSection);
-    }
+    const handleSectionLeave = () => {
+        updateActiveButton(state.lastClickedSection);
+    };
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    const handleNavClick = (event) => {
+        event.preventDefault();
+        const sectionId = event.currentTarget.getAttribute('href').substring(1);
+        scrollToSection(sectionId);
+    };
 
-    // Add mouseover and mouseleave event listeners to the main content area
-    const mainContent = document.querySelector('.main-content');
-    if (mainContent) {
-        mainContent.addEventListener('mouseover', handleSectionHover);
-        mainContent.addEventListener('mouseleave', handleSectionLeave);
-    }
+    const handleHamburgerClick = () => {
+        elements.accordionMenu.classList.toggle('active');
+    };
 
-    // Add click listeners to nav buttons
-    document.querySelectorAll('.sidebar nav .button').forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            const sectionId = button.getAttribute('href').substring(1);
-            scrollToSection(sectionId);
+    // --- Initialization ---
+
+    const initEventListeners = () => {
+        window.addEventListener('scroll', handleScroll);
+
+        if (elements.mainContent) {
+            elements.mainContent.addEventListener('mouseover', handleSectionHover);
+            elements.mainContent.addEventListener('mouseleave', handleSectionLeave);
+        }
+
+        elements.sidebarButtons.forEach(button => {
+            button.addEventListener('click', handleNavClick);
         });
-    });
 
-    // Hamburger menu functionality
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const accordionMenu = document.getElementById('accordion-menu');
+        if (elements.hamburgerMenu && elements.accordionMenu) {
+            elements.hamburgerMenu.addEventListener('click', handleHamburgerClick);
+        }
+    };
 
-    if (hamburgerMenu && accordionMenu) {
-        hamburgerMenu.addEventListener('click', function() {
-            accordionMenu.classList.toggle('active');
-        });
-    }
+    const init = async () => {
+        cacheDOMElements();
+        initEventListeners();
 
-    // Load all content when page loads
-    async function initializePage() {
-        // Load aboutme.html first
-        await loadContent('aboutme', 'aboutme.html');
-        updateActiveButton('aboutme');
+        // Load initial section first for immediate content
+        await loadContent(CONFIG.initialSection, 'aboutme.html');
+        updateActiveButton(CONFIG.initialSection);
 
         // Load other sections in the background
-        const otherSections = sections.filter(section => section.id !== 'aboutme');
-        otherSections.forEach(section => {
-            loadContent(section.id, section.file);
-        });
-    }
+        CONFIG.sections
+            .filter(section => section.id !== CONFIG.initialSection)
+            .forEach(section => loadContent(section.id, section.file));
+    };
 
-    initializePage();
-});
+    return {
+        init
+    };
+})();
+
+document.addEventListener('DOMContentLoaded', PageController.init);
