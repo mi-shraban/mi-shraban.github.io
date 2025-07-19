@@ -351,6 +351,10 @@ form button[type="submit"]:hover {
     color: #b0b0b0;
 }
 
+#scrollToTopBtn{
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -473,6 +477,7 @@ form button[type="submit"]:hover {
         bottom: 3%;
         left: 5%;
         z-index: 5;
+        outline: none;
         background-color: #1e1e1e;
         border: 2px solid #00bcd4;
         color: #00bcd4;
