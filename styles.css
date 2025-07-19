@@ -470,20 +470,15 @@ form button[type="submit"]:hover {
         display: none;
         position: fixed;
         transition: ease-in-out;
-        bottom: 20px;
-        left: 20px;
-        z-index: 99;
-        /*outline: none;*/
+        bottom: 3%;
+        left: 5%;
+        z-index: 5;
         background-color: #1e1e1e;
-        border: 1px solid #00bcd4;
+        border: 2px solid #00bcd4;
         color: #00bcd4;
         cursor: pointer;
         border-radius: 50%;
         font-size: 18px;
         padding: 10px 15px 10px 15px;
-        /*padding-left: 15px;*/
-        /*padding-right: 15px;*/
-        /*padding-top: 10px;*/
-        /*padding-bottom: 10px;*/
     }
 }
