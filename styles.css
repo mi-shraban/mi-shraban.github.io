@@ -485,6 +485,7 @@ form button[type="submit"]:hover {
         cursor: pointer;
         border-radius: 50%;
         font-size: 18px;
-        padding: 10px 15px 10px 15px;
+        padding: 10px 14px 10px 14px;
+        /*padding: 15px 15px;*/
     }
 }
