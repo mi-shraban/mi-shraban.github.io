@@ -90,7 +90,7 @@ a:hover {
     color: #121212;
 }
 
-.hamburger-menu {
+.dropdown-menu {
     display: none;
 }
 
@@ -389,7 +389,7 @@ form button[type="submit"]:hover {
     }
 
     #accordion-menu.active {
-        display: flex; /* Show when hamburger is clicked */
+        display: flex; /* Show when dropdown is clicked */
     }
 
     .sidebar nav a {
@@ -398,24 +398,24 @@ form button[type="submit"]:hover {
         text-align: center;
     }
 
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        top: 2px;
-        right: -55px; /* Adjust this to position it relative to the profile image */
-        z-index: 10;
-        cursor: pointer;
+    .inv_box {
+        /*border: 1px solid blue;*/
+        padding: 0 0;
+        margin: 0 40% 0 40%;
     }
 
-    .hamburger-menu span {
+    .dropdown-menu {
         display: block;
-        width: 30px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #e0e0e0;
-        border-radius: 3px;
-        z-index: 1;
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+        margin-top: 0;
+        color: #00bcd4;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-menu.active {
+        transform: rotate(180deg);
     }
 
     .container2 {
@@ -464,5 +464,26 @@ form button[type="submit"]:hover {
 
     .soln_link{
         text-align: center;
+    }
+
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        transition: ease-in-out;
+        bottom: 20px;
+        left: 20px;
+        z-index: 99;
+        /*outline: none;*/
+        background-color: #1e1e1e;
+        border: 1px solid #00bcd4;
+        color: #00bcd4;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 18px;
+        padding: 10px 15px 10px 15px;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
+        /*padding-top: 10px;*/
+        /*padding-bottom: 10px;*/
     }
 }

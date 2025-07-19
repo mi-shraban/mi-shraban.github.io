@@ -4,7 +4,7 @@ const PageController = (() => {
         sidebarButtonSelector: '.sidebar nav .button',
         mainContentSelector: '.main-content',
         sectionSelector: '.section',
-        hamburgerId: 'hamburger-menu',
+        dropdownId: 'dropdown-menu',
         accordionId: 'accordion-menu',
         initialSection: 'aboutme',
         sections: [
@@ -32,22 +32,25 @@ const PageController = (() => {
         elements.sidebarButtons = document.querySelectorAll(CONFIG.sidebarButtonSelector);
         elements.mainContent = document.querySelector(CONFIG.mainContentSelector);
         elements.sections = document.querySelectorAll(CONFIG.sectionSelector);
-        elements.hamburgerMenu = document.getElementById(CONFIG.hamburgerId);
+        elements.dropdownMenu = document.getElementById(CONFIG.dropdownId);
         elements.accordionMenu = document.getElementById(CONFIG.accordionId);
     };
 
     const loadContent = async (sectionId, fileName) => {
         try {
             const response = await fetch(fileName);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            if (!response.ok)
+                throw new Error(`HTTP error! status: ${response.status}`);
             const content = await response.text();
             state.loadedContent[sectionId] = content;
             const sectionElement = document.getElementById(sectionId);
-            if (sectionElement) sectionElement.innerHTML = content;
+            if (sectionElement)
+                sectionElement.innerHTML = content;
         } catch (error) {
             console.error(`Error loading ${fileName}:`, error);
             const sectionElement = document.getElementById(sectionId);
-            if(sectionElement) sectionElement.innerHTML = `<p>Error loading content for ${sectionId}</p>`;
+            if(sectionElement)
+                sectionElement.innerHTML = `<p>Error loading content for ${sectionId}</p>`;
         }
     };
 
@@ -97,8 +100,9 @@ const PageController = (() => {
         scrollToSection(sectionId);
     };
 
-    const handleHamburgerClick = () => {
+    const handleDropdownClick = () => {
         elements.accordionMenu.classList.toggle('active');
+        elements.dropdownMenu.classList.toggle('active');
     };
 
     // --- Initialization ---
@@ -115,8 +119,8 @@ const PageController = (() => {
             button.addEventListener('click', handleNavClick);
         });
 
-        if (elements.hamburgerMenu && elements.accordionMenu) {
-            elements.hamburgerMenu.addEventListener('click', handleHamburgerClick);
+        if (elements.dropdownMenu && elements.accordionMenu) {
+            elements.dropdownMenu.addEventListener('click', handleDropdownClick);
         }
     };
 
