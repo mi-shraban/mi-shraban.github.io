@@ -405,7 +405,7 @@ form button[type="submit"]:hover {
     .inv_box {
         /*border: 1px solid blue;*/
         padding: 0 0;
-        margin: 0 40% 0 40%;
+        margin: 0 45% 0 45%;
     }
 
     .dropdown-menu {
@@ -420,6 +420,7 @@ form button[type="submit"]:hover {
 
     .dropdown-menu.active {
         transform: rotate(180deg);
+        transition: transform 0.3s ease;
     }
 
     .container2 {
