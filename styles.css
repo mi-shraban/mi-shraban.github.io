@@ -386,14 +386,18 @@ form button[type="submit"]:hover {
     }
 
     #accordion-menu {
-        display: none; /* Hide by default on mobile */
+        display: none;
         flex-direction: column;
         width: 100%;
         align-items: center;
+        max-height: 0;
+        transition: max-height 0.3s ease-in;
     }
 
     #accordion-menu.active {
-        display: flex; /* Show when dropdown is clicked */
+        display: flex;
+        max-height: 100%;
+        transition: max-height 0.3s ease-out;
     }
 
     .sidebar nav a {
@@ -476,7 +480,7 @@ form button[type="submit"]:hover {
         position: fixed;
         transition: ease-in-out;
         bottom: 3%;
-        left: 5%;
+        right: 5%;
         z-index: 5;
         outline: none;
         background-color: #1e1e1e;
