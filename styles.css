@@ -476,7 +476,7 @@ form button[type="submit"]:hover {
         position: fixed;
         transition: ease-in-out;
         bottom: 3%;
-        left: 5%;
+        right: 5%;
         z-index: 5;
         outline: none;
         background-color: #1e1e1e;
