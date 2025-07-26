@@ -28,7 +28,8 @@ const CFScraper = (() => {
     const getLanguage = (lang) => {
         const lowerLang = lang.toLowerCase();
         if (lowerLang.includes("py")) return "Python";
-        if (lang.includes("C++")) return "C++";
+        if (lowerLang.includes("c++")) return "C++";
+        if (lowerLang.includes('javascript')) return "JavaScript";
         return lang;
     };
     
