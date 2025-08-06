@@ -5,7 +5,7 @@ const CFScraper = (() => {
         verdictFilter: "OK",
         maxSubmissions: 9999,
         containerId: "submissions-container",
-        solutionBaseUrl: "https://github.com/monowarulIslamShraban/cf_solves/blob/main/"
+        solutionBaseUrl: "https://github.com/mi-shraban/cf_solves/blob/main/"
     };
 
     // --- Private State ---
