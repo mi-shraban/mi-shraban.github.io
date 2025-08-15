@@ -60,18 +60,20 @@ a:hover {
     border: 3px solid #00bcd4;
     object-fit: cover;
     display: block;
+    background: #d8e2dc;
 }
 
 .sidebar h1 {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
+    color: #d8e2dc;
 }
 
 .sidebar h1 small {
     font-size: 16px;
     display: inline;
-    color: #b0b0b0;
+    color: #d8e2dc;
 }
 
 .sidebar nav a {
@@ -79,7 +81,7 @@ a:hover {
     padding: 12px 15px;
     margin-bottom: 10px;
     border-radius: 8px;
-    color: #e0e0e0;
+    color: #d8e2dc;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
