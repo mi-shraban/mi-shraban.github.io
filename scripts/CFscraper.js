@@ -3,7 +3,7 @@ const CFScraper = (() => {
     const CONFIG = {
         handle: "xordan.-",
         verdictFilter: "OK",
-        maxSubmissions: 9999,
+        maxSubmissions: 3000,
         containerId: "submissions-container",
         solutionBaseUrl: "https://github.com/mi-shraban/cf_solves/blob/main/"
     };
@@ -75,7 +75,7 @@ const CFScraper = (() => {
         const topLangs = sortedLangs.slice(0, 2).map(l => l[0]).join(', ');
 
         return `
-            <div class="stats">
+            <div class="stat-container">
                 <div class="stat-item">
                     <div class="stat-number">${solvedCount}</div>
                     <div class="stat-label">Problems Solved</div>
@@ -112,7 +112,7 @@ const CFScraper = (() => {
                 ${solveFile ? `
                 <div class="soln_link">
                     <a href="${solutionUrl}" target="_blank" class="solution-link">
-                       View my Solution
+                        View my Solution
                     </a>
                 </div>` : ''}
             </div>
