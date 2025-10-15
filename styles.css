@@ -332,6 +332,37 @@ form button[type="submit"]:hover {
     transition: background-color 0.3s ease;
 }
 
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    background-color: #00bcd4;
+    border: 1px solid white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #121212;
+}
+
+.page-btn:hover {
+    background-color: #0097a7;
+    transition: background-color 0.3s ease;
+}
+
+.page-btn.active {
+    background-color: #00bcd4;
+    color: #121212;
+    border: 2px solid white;
+    font-weight: bold;
+}
+
 .stat-container {
     display: flex;
     grid-column: 1 / -1;
