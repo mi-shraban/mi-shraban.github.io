@@ -66,7 +66,11 @@ const CFScraper = (() => {
             filteredSubmissions.push({
                 sub_id: sub.id,
                 name: problemName,
+                // keep combined id for solution filename compatibility
                 id: `${problem.contestId || "N/A"}${problem.index || "?"}`,
+                // store explicit fields to avoid incorrect slicing for multi-char indices (e.g., E1, AA)
+                contestId: problem.contestId,
+                index: problem.index,
                 verdict,
                 language,
                 time: new Date(sub.creationTimeSeconds * 1000).toLocaleString()
@@ -100,9 +104,12 @@ const CFScraper = (() => {
 
     const createSubmissionHtml = (submission) => {
         const solveFile = getSolutionFileName(submission.language, submission.id);
-        const contestId = submission.id.slice(0, -1);
-        const problemIndex = submission.id.slice(-1);
-        const problemUrl = `https://codeforces.com/contest/${contestId}/problem/${problemIndex}`;
+        // Use stored contestId and index directly to support multi-character indices
+        const contestId = submission.contestId;
+        const problemIndex = submission.index;
+        const problemUrl = (contestId && problemIndex)
+            ? `https://codeforces.com/contest/${contestId}/problem/${problemIndex}`
+            : '#';
         const solutionUrl = solveFile ? `${CONFIG.solutionBaseUrl}${solveFile}` : '#';
 
         return `
