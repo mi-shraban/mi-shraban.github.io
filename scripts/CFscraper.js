@@ -133,7 +133,7 @@ const CFScraper = (() => {
     };
 
     const createPaginationHtml = (currentPage, totalPages) => {
-        const maxButtons = 7; // up to 7 numbered pages visible
+        const maxButtons = 5; // up to 5 numbered pages visible
         let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
         let endPage = Math.min(totalPages, startPage + maxButtons - 1);
         if (endPage - startPage < maxButtons - 1) {
