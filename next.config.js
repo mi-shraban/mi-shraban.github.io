@@ -7,7 +7,7 @@ const nextConfig = {
 
     // Set base path to your repository name
     // Replace 'your-repo-name' with your actual GitHub repository name
-    basePath: process.env.NODE_ENV === 'production' ? '' : '',
+    basePath: '',
 
     // Disable image optimization for static export
     images: {
