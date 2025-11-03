@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://monowarulislam.vercel.app/sitemap.xml
